@@ -451,3 +451,21 @@ h3.tc{border-left:none;padding-left:0;font-size:22px}
 @keyframes goldFrame{0%,100%{background-position:0 0,0% 0}50%{background-position:0 0,100% 0}}
 @keyframes recGlow{0%{box-shadow:0 0 0 1px rgba(138,110,46,.35),0 18px 50px rgba(31,51,40,.18),0 0 46px rgba(183,154,90,.5)}35%{box-shadow:0 0 0 1px rgba(138,110,46,.5),0 18px 70px rgba(31,51,40,.2),0 0 90px rgba(230,213,166,.9)}100%{box-shadow:0 0 0 1px rgba(138,110,46,.35),0 18px 50px rgba(31,51,40,.18),0 0 46px rgba(183,154,90,.5)}}
 .plan.rec{grid-template-columns:112px 1fr}
+
+.pr-stage .off,.limbox .lt,.bonus .bt{border-radius:0!important}
+.item.rec .badge{top:-14px}
+
+/* ヒーロー v4：あまねと同じ長方形の額装（4:5・金の二重ヘアライン）。丸型は廃止 */
+.hero{padding:22px 0 8px}
+.hero-person{width:calc(100% - 48px);max-width:400px;aspect-ratio:4/5;border-radius:0!important;margin:0 auto;box-shadow:0 22px 50px rgba(31,51,40,.22);position:relative}
+.hero-person::before{display:block;content:"";position:absolute;inset:10px;border:1px solid rgba(230,213,166,.85);border-radius:0;z-index:3;pointer-events:none}
+.hero-person img{object-position:center 22%;animation:heroDrift 34s ease-in-out infinite alternate;transform:scale(1.02)}
+.hero-person::after{background:linear-gradient(180deg,transparent 62%,rgba(31,51,40,.26))}
+.hero-copy{margin:22px auto 0!important;width:calc(100% - 48px);max-width:400px;padding:26px 24px 22px;border:1px solid rgba(183,154,90,.55);background:transparent;box-shadow:none}
+.hero-copy::before{display:none}
+.hero-copy .lead{text-align:center}
+.hero-copy h1{text-align:center;font-size:clamp(30px,8.8vw,42px);line-height:1.45}
+.hero-copy .tag{display:block;width:max-content;max-width:100%;margin:6px auto 0}
+.scrollcue{align-items:center;margin-top:12px}
+.scrollcue i{height:26px}
+@media (min-width:700px){.hero-person,.hero-copy{max-width:440px}}
