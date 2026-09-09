@@ -621,3 +621,22 @@ body.ed .shot img{box-shadow:0 14px 34px rgba(0,0,0,.22)}
 
 body.ed .chk li{padding-right:44px}
 body.ed .chk li::after{top:24px}
+
+/* =====================================================================
+   数字の書体を統一（ユーザー指摘：Cormorantのオールドスタイル数字は高さが揃わず読みにくい）
+   → 数字はすべて明朝（Shippori Mincho B1）のライニング数字・等幅に
+   ===================================================================== */
+.cd .u b,.sticky .lab .cdmini,.price,.num-gold,.stat .num,.sticky .pricebox .p,.pricepeek .it .v,.vs .r.pr .c .v,.wave .cnt b,.steps .st::before,.pr-stage .off b,.dev .no,body.ed .chk li::before,body.ed .chapno{font-family:var(--serif)!important;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.cd .u b{font-weight:700;font-size:clamp(32px,9vw,42px);letter-spacing:.02em}
+.cd .sep{font-family:var(--serif);font-size:26px;padding-bottom:16px}
+.sticky .lab .cdmini{font-weight:700;font-size:13px}
+.price{font-weight:800}
+.stat .num{font-weight:800;font-size:clamp(46px,13vw,64px);letter-spacing:.02em}
+.sticky .pricebox .p{font-weight:800;font-size:22px}
+.pricepeek .it .v{font-weight:800}
+.vs .r.pr .c .v{font-weight:800;font-size:24px}
+.wave .cnt b{font-weight:800;font-size:1.4em}
+.steps .st::before{font-size:15px;font-weight:700}
+.dev .no{font-size:13px}
+body.ed .chapno{font-size:80px;font-weight:700}
+body.ed .chk li::before{font-size:18px;font-weight:700}
