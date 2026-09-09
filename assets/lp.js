@@ -6,7 +6,7 @@
   var supportsIO = 'IntersectionObserver' in window;
 
   /* ---- 1. リビール（.rv .rv-s .rv-b .stag .lines .eyebrow h2 .moonwrap .growline .item.rec .plan.rec） ---- */
-  var targets = document.querySelectorAll('.rv,.rv-s,.rv-b,.stag,.lines,.eyebrow,h2,.moonwrap,.growline,.item.rec,.plan.rec,.wipe');
+  var targets = document.querySelectorAll('.rv,.rv-s,.rv-b,.stag,.lines,.eyebrow,h2,.moonwrap,.growline,.item.rec,.plan.rec,.wipe,.depthbar');
   if(reduce || !supportsIO){
     targets.forEach(function(el){ el.classList.add('on'); });
   } else {
