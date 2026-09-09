@@ -583,3 +583,42 @@ footer a{color:var(--mute);text-decoration:underline;text-underline-offset:3px;d
 /* 装置アイコン */
 .dev .ic{width:34px;height:34px;display:block;margin-bottom:10px;color:var(--gold-hi)}
 .dev .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* =====================================================================
+   編集デザイン層 v4（body.ed で有効）: テンプレ感・単調さを崩す
+   透かしノンブル／縦書き一行／左右の振り／写真のはみ出し／番号カード／スクショの互い違い
+   ===================================================================== */
+body.ed section{position:relative;overflow:hidden}
+body.ed .chapno{position:absolute;right:calc(var(--pad) - 6px);top:26px;font-size:96px;line-height:1;letter-spacing:0;opacity:.09;color:var(--gold-hi);font-family:var(--lat);font-weight:500;pointer-events:none;margin:0;text-align:right;padding:0}
+body.ed .s-light .chapno{color:#fff;opacity:.1}
+/* 縦書きの一行 */
+.tate{writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--serif);font-size:20px;letter-spacing:.28em;line-height:1.9;color:var(--gold-hi);margin:34px 0 34px auto;padding:10px 12px;border-right:1px solid rgba(201,162,75,.5);height:min(280px,64vw);text-align:start;font-weight:600}
+.tate.l{margin:34px auto 34px 0;border-right:none;border-left:1px solid rgba(201,162,75,.5)}
+.s-light .tate{color:var(--kon);border-color:rgba(255,255,255,.4)}
+/* 核心一行を左右に振る（xlは中央のまま） */
+body.ed section:nth-of-type(even) .big:not(.xl){text-align:right;padding-right:14px;padding-left:0}
+body.ed section:nth-of-type(odd) .big:not(.xl){text-align:left;padding-left:14px}
+/* 写真を左右にはみ出す */
+body.ed section:nth-of-type(odd) .ph.wide{margin-left:calc(-1 * var(--pad));width:calc(100% + var(--pad));border-radius:0 6px 6px 0}
+body.ed section:nth-of-type(even) .ph.wide{margin-right:calc(-1 * var(--pad));width:calc(100% + var(--pad));border-radius:6px 0 0 6px}
+body.ed .ph.wide img{aspect-ratio:16/11}
+/* 共感チェック：番号つきカード */
+body.ed .chk{counter-reset:ck;display:grid;gap:10px}
+body.ed .chk li{border:1px solid rgba(201,162,75,.35);border-bottom-width:1px;padding:16px 16px 16px 58px;background:rgba(255,255,255,.04);font-size:15.5px;line-height:1.85}
+body.ed .chk li::before{counter-increment:ck;content:counter(ck,decimal-leading-zero);left:14px;top:14px;width:auto;height:auto;border:none;font-family:var(--lat);font-size:22px;color:var(--gold);line-height:1;opacity:.9}
+body.ed .chk li::after{left:auto;right:14px;top:22px}
+body.ed .chk li.on{background:rgba(201,162,75,.10)}
+/* スクショを互い違いに */
+body.ed .shot{width:calc(100% - 22px)}
+body.ed .shot:nth-of-type(odd){margin-right:auto;margin-left:0}
+body.ed .shot:nth-of-type(even){margin-left:auto;margin-right:0}
+body.ed .shot img{box-shadow:0 14px 34px rgba(0,0,0,.22)}
+/* 章間の呼吸：小さな装飾線 */
+.breath{display:flex;align-items:center;justify-content:center;gap:10px;margin:54px 0 8px;color:var(--gold);opacity:.8}
+.breath::before,.breath::after{content:"";width:28px;height:1px;background:currentColor}
+.breath i{width:5px;height:5px;background:currentColor;transform:rotate(45deg)}
+/* 商品カードの上の一言（型の変化） */
+.pre{font-family:var(--serif);font-size:13px;letter-spacing:.3em;color:var(--gold-hi);text-align:center;margin:34px 0 -8px}
+
+body.ed .chk li{padding-right:44px}
+body.ed .chk li::after{top:24px}
