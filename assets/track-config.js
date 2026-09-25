@@ -1,2 +1,2 @@
 /* Microsoft Clarity のプロジェクトID。空のままなら計測しない */
-window.LP_CLARITY_ID = "";
+window.LP_CLARITY_ID = "ynt8gw9w6k";
